@@ -1,0 +1,162 @@
+* { 
+    margin: 0;
+    padding: 0;
+
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+}
+
+header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    height:80px;
+    background-color:#000000;
+    align-items: center;
+    display: flex;
+    box-shadow: 0 0 10px 0 black;
+    z-index: 9;
+    padding-top: 5px;
+}
+
+header * {
+    display: inline;
+}
+
+header li {
+    margin: 30px;
+}
+
+header li a {
+    color: white;
+    text-decoration: none;
+}
+
+.logo {
+    width: 200px; 
+    height: auto; 
+    object-fit: cover; 
+    margin-left: 20px; 
+}
+
+nav{
+    margin-left: auto;
+}
+
+nav ul {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+main {
+    display: flex;
+    justify-content: center;
+    height: calc(100vh);
+    background-color: #B8DAFF;
+    flex-direction: column;
+}
+
+main h1 {
+    padding-left: 200px;
+    text-align: left;
+    margin-bottom: 10px;   
+}
+
+main p {
+    padding-left: 200px;
+    margin-top: 10px;
+    text-align: left;
+    margin-bottom: 10px;
+}
+
+.icon_image {
+    width: 25px; 
+}
+
+.info_text {
+    color: white;
+    text-decoration: none;
+}
+
+#left_foot {
+    float: left;
+}
+
+#left_foot li {
+    margin: 20px;
+}
+
+#right_foot {
+    float: right;
+    text-decoration: none;
+}
+
+#right_foot li {
+    margin: 10px;
+}
+
+footer {
+    background-color: #000000;
+    padding: 20px;
+    text-align: center;
+    display: inline-block;
+    justify-content: space-between;
+    width: 100%;
+    position: absolute;
+    bottom: 0;
+    padding: 1px 0;
+    box-shadow: 0 0 10px 0 black;
+}
+
+.icon_image {
+    width: 25px;
+}
+
+.info_text {
+    color: white;
+    text-decoration: none;
+}
+
+#left_foot {
+    float: left;
+}
+
+#left_foot li {
+    margin: 20px;
+}
+
+#right_foot {
+    float: right;
+    text-decoration: none;
+}
+
+#right_foot li {
+    margin: 10px;
+}
+
+.form-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.form-field {
+    margin-bottom: 10px;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    width: 300px;
+    box-sizing: border-box;
+    background-color: #fff;
+}
+.form-submit {
+    padding: 10px 20px;
+    background-color: #ccc;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
