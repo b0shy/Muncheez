@@ -1,0 +1,36 @@
+{% extends'_layout.html' %}
+
+
+{% block head %}
+
+
+{% endblock %}
+
+{% block body %}
+<p></p>
+<div class="login-container">
+    <h1>Login</h1>
+    <form method="post" action="/login">
+        <label for="username">Username</label>
+        <input type="text" id="username" name="username" required>
+    
+        <label for="password">Password</label>
+        <input type="password" id="password" name="password" required>
+    
+        <div class="button-container">
+        <button type="submit" id="login-button">Login</button>
+        <button type="submit" id="forgot-password-button">Forgot Password</button>
+        <a href="/users/new"> Create account</a>
+
+
+        
+        </div>
+    
+    </form>
+
+
+{% endblock %}
+
+
+
+
