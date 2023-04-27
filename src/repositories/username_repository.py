@@ -37,7 +37,6 @@ class usernameRepository:
         if user and check_password_hash(user.user_password, user_password):
             return user
         return None
-    # Survey functions
 
 
     # Allows the code to be used in other modules

@@ -9,20 +9,18 @@ app.secret_key = 'cool-guy'
 
 # TODO: DB connection
 app.config['SQLALCHEMY_DATABASE_URI'] = \
-    'mysql://root:password!@localhost:3306/furfinder'
+    'mysql://root:password@localhost:3306/muncheez'
 app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
 db.init_app(app)
 
 # gets the homepage
-
-
 @app.get('/')
 def index():
     return render_template('index.html')
 
 # sends the user to the create user form
 
-
+#gets the sign up page 
 @app.get('/users/new')
 def create_new_user_form():
     return render_template('signup.html')
@@ -52,7 +50,33 @@ def create_user():
 
     session['user_id'] = user.user_id
 
-    return redirect(f'/users/{user.user_id}/newSurvey')
+    return redirect(f'/allRestaurant')
+
+#shows all the restaurants
+@app.get('/allRestaurant')
+def get_all_Restaurant():
+    return render_template('restaurant_list.html')
+
+
+
+
+
+
+#logs the user in and redirects them to the restaurant page 
+@app.post('/login')
+def login():
+    username = request.form.get('username', '')
+    password = request.form.get('password', '')
+
+    user = users_repository_singleton.login(username, password)
+
+    if user:
+        return redirect(f'/allRestaurant')
+    else:
+        return render_template('index.html', error='Invalid Username or Password')
+    
+
+
 
 
 
