@@ -1,0 +1,40 @@
+{% extends '_layout.html' %}
+
+
+
+{% block title %} Create account{% endblock %}
+
+
+{% block body %}
+<h1 class="Header-Before-Login">Begin Your Dog adoption Journey Today!</h1>
+
+<div class="login-container">
+  <form action="/users" method = "post">
+  <h1>Create Account</h1>
+  <form>
+      <label for="username">Username</label>
+      <input type="text" id="username" name="username" required>
+      <label for="password">Password</label>
+
+      <input type="password" id="user_password" name="user_password" required>
+
+      <label for="retype-password">Retype Password</label>
+      <input type="text" id="retype-password" name="retype-password" required>
+
+      <label for="first-name">First Name</label>
+      <input type="text" id="first_name" name="firstName" required>
+
+      <label for="last-name">Last Name</label>
+      <input type="text" id="lastName" name="lastName" required>
+
+      <label for="email">Email</label>
+      <input type="text" id="user_email" name="user_email" required>
+
+      <label for="number">Phone number</label>
+      <input type="text" id="user_phone_number" name="user_phone_number" required>
+      
+      <div class="button-container">
+        <button type="submit" id="Create Account">Create Account</button>
+
+    </form>
+{% endblock %}

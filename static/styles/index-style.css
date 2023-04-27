@@ -138,6 +138,17 @@ footer {
     margin: 10px;
 }
 
+.login-container {
+    width: 40%;
+    margin: auto;
+    margin-top: 150px;
+    padding: 20px;
+    border: 2px solid #000000;
+    border-radius: 50px;
+    box-shadow: 0 0 50px rgba(0, 4, 250, 0.1);
+    text-align: center; 
+}
+
 .form-container {
     display: flex;
     flex-direction: column;
