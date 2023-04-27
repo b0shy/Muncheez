@@ -9,7 +9,7 @@ app.secret_key = 'cool-guy'
 
 # TODO: DB connection
 app.config['SQLALCHEMY_DATABASE_URI'] = \
-    'mysql://root:1F901e4cd3!@localhost:3306/furfinder'
+    'mysql://root:password!@localhost:3306/furfinder'
 app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
 db.init_app(app)
 
