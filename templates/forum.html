@@ -1,0 +1,93 @@
+{% extends'_layout.html' %}
+
+
+{% block head %}
+
+
+{% endblock %}
+
+{% block body %}
+<body>
+    <div class="border">
+        <div class="munchie">
+            <h1>
+                Muncheez Forum:
+            </h1>
+        </div>
+        <div class="main">
+            <ol>
+            </ol>
+        </div>
+        <script src="/static/scripts/data.js"></script>
+        <script>
+            var container = document.querySelector('ol');
+            for (let thread of defaultThreads) {
+                var html = `
+                <li class="row">
+                        <h4 class="title">
+                            ${thread.title}
+                        </h4>
+                        <div class="info">
+                            <p class="address">
+                                Address: ${thread.address}
+                            </p>
+                            <p>
+                                ${thread.comments.length} comments
+                            </p>
+                        </div>
+                </li>
+                `
+                container.insertAdjacentHTML('beforeend', html);
+            }
+        </script>
+    </div>
+    <style>
+        .border{
+            background-color: black;
+            border: 2px solid #000000;
+            border-radius: 35px;
+            box-shadow: 0 0 50px rgba(0, 4, 250, 0.1);
+            color: white;
+        }
+        
+        body {
+            margin: 110px 40px;
+            font-size: 20px;
+        }
+
+        h1, h4, ol {
+            color: white;
+        }
+
+        p {
+            margin-top: 5px;
+        }
+
+        .munchie {
+            padding: 0 30px;
+        }
+
+        .main {
+            padding: 15px 15px;
+            color: white;
+        }
+
+        .row {
+            padding: 5px 0;
+            position: relative;
+            left: 15px;
+        }
+
+        .info {
+            display: flex;
+            color: grey;
+            font-size: 12px;
+        }
+
+        .address {
+            padding-right: 10px;
+        }
+    </style>
+</body>
+
+{% endblock %}

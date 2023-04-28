@@ -18,6 +18,10 @@ db.init_app(app)
 def index():
     return render_template('index.html')
 
+@app.route('/forum')
+def forum():
+    return render_template('forum.html')
+
 # sends the user to the create user form
 
 #gets the sign up page 
