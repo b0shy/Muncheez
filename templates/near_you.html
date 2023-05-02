@@ -1,0 +1,63 @@
+{% extends'_layout.html' %}
+
+
+{% block head %}
+
+
+{% endblock %}
+
+{% block body %}
+<!DOCTYPE html>
+<html>
+    <style>
+        #map{
+    width:40%;
+    height:350px;
+    background-color: gray;
+    margin-left: 800px;
+    margin-top: 40px;
+}
+h3{
+    margin-top: 150px;
+    color: black;
+    font-size:40px;
+    margin-left: 40px;
+}
+    </style>
+    <body>
+        <h3>Places Near You</h3>
+        <div id="map"></div>
+        <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCH4kKcjpKOeKt4Uee99NOLsZ2autke0CI&callback=initMap"></script>
+        <script>
+            function initMap(){
+                let uncc={lat:35.308761899088616,lng:-80.73368299952708}
+                let map=new google.maps.Map(document.getElementById('map'),{zoom:13,center: uncc});
+                map.setOptions({ styles: styles["hide"] });
+                let cookout={lat:35.318689060374,lng:-80.73835448663861}
+                let markerCook=new google.maps.Marker({position:cookout,map:map})
+                let mcDon={lat:35.308969399597416,lng:-80.74833297331882}
+                let markerMc=new google.maps.Marker({position:mcDon,map:map})
+                let mcDon2={lat:35.29534182194402,lng:-80.74801181013444}
+                let markerMc2=new google.maps.Marker({position:mcDon2,map:map})
+                let seven11={lat:35.307981620090736,lng:-80.72240335637355}
+                let markerseven=new google.maps.Marker({position:seven11,map:map})
+            }
+            const styles = {
+            default: [],
+            hide: [
+            {
+                featureType: "poi",
+                elementType:"labels",
+                stylers: [{ visibility: "off" }],
+             },
+         ],
+        };
+        function zoom(){
+            const center = new google.maps.LatLng(35.318689060374, -80.73835448663861);
+            window.map.panTo(center);
+        }
+        </script>
+        <button onclick="zoom()">Click me</button>
+    </body>
+</html>
+{% endblock %}
