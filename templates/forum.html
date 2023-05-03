@@ -8,6 +8,18 @@
 
 {% block body %}
 <body>
+    <div class="header">
+        <header>
+            <img src="{{ url_for('static', filename='images/logo.png')  }}">
+            <nav>
+                <ul>
+                    <li><a href="/">Home</a></li>
+                    <li><a href="/nearYou">Near You</a></li>
+                    <li><a href="{{ url_for('forum') }}">Forum</a></li>
+                </ul>
+            </nav>
+        </header>
+    </div>
     <div class="border">
         <div class="munchie">
             <h1>
