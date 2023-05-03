@@ -171,3 +171,10 @@ footer {
     border-radius: 5px;
     cursor: pointer;
 }
+
+.logo {
+    width: 200px;
+    height: auto;
+    object-fit: cover;
+    margin-left: 20px;
+}
