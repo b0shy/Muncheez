@@ -15,8 +15,9 @@
         <img src="{{ url_for('static', filename='images/logo.png')  }}">
         <nav>
             <ul>
-                <li><a href="index.html">Home</a></li>
-                <li><a href="features.html">Features</a></li>
+                <li><a href="/">Home</a></li>
+                <li><a href="/nearYou">Near You</a></li>
+                <li><a href="/features">Features</a></li>
                 <li><a href="signup.html">Sign Up</a></li>
                 <li><a href="login.html">Login</a></li>
                 <li><a href="{{ url_for('forum') }}">Forum</a></li>
@@ -28,8 +29,8 @@
 <footer>
     <nav id="left_foot">
         <ul>
-            <li><a href="about.html" class="info_text">About</a></li>
-            <li><a href="contact.html" class="info_text">Contact</a></li>
+            <li><a href="/about" class="info_text">About</a></li>
+            <li><a href="/contact" class="info_text">Contact</a></li>
         </ul>
     </nav>
 </footer>

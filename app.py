@@ -61,10 +61,26 @@ def create_user():
 def get_all_Restaurant():
     return render_template('restaurant_list.html')
 
+#shows the food near you page
+@app.get('/nearYou')
+def get_near_You():
+    return render_template('near_you.html')
 
 
+#shows the features page
+@app.get('/features')
+def get_features():
+    return render_template('features.html')
 
+#shows the features page
+@app.get('/about')
+def get_about():
+    return render_template('about.html')
 
+#shows the features page
+@app.get('/contact')
+def get_contact():
+    return render_template('contact.html')
 
 #logs the user in and redirects them to the restaurant page 
 @app.post('/login')
