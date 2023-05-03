@@ -54,7 +54,7 @@ def create_user():
 
     session['user_id'] = user.user_id
 
-    return redirect(f'/allRestaurant')
+    return redirect(f'/nearYou')
 
 #shows all the restaurants
 @app.get('/allRestaurant')
@@ -91,7 +91,7 @@ def login():
     user = users_repository_singleton.login(username, password)
 
     if user:
-        return redirect(f'/allRestaurant')
+        return redirect(f'/nearYou')
     else:
         return render_template('index.html', error='Invalid Username or Password')
     
