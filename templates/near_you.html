@@ -15,23 +15,31 @@
     height:350px;
     background-color: gray;
     margin-left: 800px;
-    margin-top: 40px;
+    margin-top: 200px;
+    position: absolute;
 }
 h3{
     margin-top: 150px;
     color: black;
     font-size:40px;
     margin-left: 40px;
+    position: absolute;
+}
+.box{
+width: 500px;
+height: 100px;
+border: 1px solid black;
+margin-left: 75px;
+margin-top: 250px;
+position: absolute;
 }
     </style>
-    <body>
-        <h3>Places Near You</h3>
-        <div id="map"></div>
-        <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCH4kKcjpKOeKt4Uee99NOLsZ2autke0CI&callback=initMap"></script>
+    <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCH4kKcjpKOeKt4Uee99NOLsZ2autke0CI&callback=initMap"></script>
         <script>
+            var map;
             function initMap(){
                 let uncc={lat:35.308761899088616,lng:-80.73368299952708}
-                let map=new google.maps.Map(document.getElementById('map'),{zoom:13,center: uncc});
+                map=new google.maps.Map(document.getElementById('map'),{zoom:13,center: uncc});
                 map.setOptions({ styles: styles["hide"] });
                 let cookout={lat:35.318689060374,lng:-80.73835448663861}
                 let markerCook=new google.maps.Marker({position:cookout,map:map})
@@ -52,12 +60,39 @@ h3{
              },
          ],
         };
-        function zoom(){
-            const center = new google.maps.LatLng(35.318689060374, -80.73835448663861);
-            window.map.panTo(center);
+        function zoomCook(){
+            map.setCenter({lat:35.318689060374,lng:-80.73835448663861});
+            map.setZoom(16);
+        }
+        function zoomMc1(){
+            map.setCenter({lat:35.308969399597416,lng:-80.74833297331882});
+            map.setZoom(16);
+        }
+        function zoomMc2(){
+            map.setCenter({lat:35.29534182194402,lng:-80.74801181013444});
+            map.setZoom(16);
+        }
+        function zoom711(){
+            map.setCenter({lat:35.307981620090736,lng:-80.72240335637355});
+            map.setZoom(16);
         }
         </script>
-        <button onclick="zoom()">Click me</button>
+    <body onload="initMap()">
+        <h3>Places Near You</h3>
+        <div id="map"></div>
+        
+        <div class="box" style="margin-left: 75px;margin-top: 250px;width: 450px;height: 90px;border: 1px solid black;position: absolute;"></div>
+        <p onclick="zoomCook()" style="margin-left: 80px;margin-top: 250px;font-size:40px;position: absolute;">Cookout</p>
+        <p onclick="zoomCook()" style="margin-left: 80px;margin-top: 300px;font-size:20px;position: absolute;">9705 N Tryon St, Charlotte, NC 28262</p>
+        <div class="box" style="margin-left: 75px;margin-top: 350px;width: 450px;height: 90px;border: 1px solid black;position: absolute;"></div>
+        <p onclick="zoomMc1()" style="margin-left: 80px;margin-top: 350px;font-size:40px;position: absolute;">McDonalds</p>
+        <p onclick="zoomMc1()" style="margin-left: 80px;margin-top: 400px;font-size:20px;position: absolute;">8900 J M Keynes Dr, Charlotte, NC 28262</p>
+        <div class="box" style="margin-left: 75px;margin-top: 450px;width: 450px;height: 90px;border: 1px solid black;position: absolute;"></div>
+        <p onclick="zoomMc2()" style="margin-left: 80px;margin-top: 450px;font-size:40px;position: absolute;">McDonalds</p>
+        <p onclick="zoomMc2()" style="margin-left: 80px;margin-top: 500px;font-size:20px;position: absolute;">8121 University City Blvd, Charlotte, NC 28213</p>
+        <div class="box" style="margin-left: 75px;margin-top: 550px;width: 450px;height: 90px;border: 1px solid black;position: absolute;"></div>
+        <p onclick="zoom711()" style="margin-left: 80px;margin-top: 550px;font-size:40px;position: absolute;">711</p>
+        <p onclick="zoom711()" style="margin-left: 80px;margin-top: 600px;font-size:20px;position: absolute;">1901 Pavilion Blvd, Charlotte, NC 28262</p>
     </body>
 </html>
 {% endblock %}
