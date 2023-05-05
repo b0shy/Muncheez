@@ -1,0 +1,131 @@
+{% extends'_layout.html' %}
+
+
+{% block head %}
+
+
+{% endblock %}
+
+{% block body %}
+
+<body>
+    <div class="header">
+        <header>
+            <img src="{{ url_for('static', filename='images/logo.png') }}"
+                style="width: 200px; height: auto; object-fit: cover; margin-left: 20px;">
+            <nav>
+                <ul>
+                    <li><a href="/">Home</a></li>
+                    <li><a href="/nearYou">Near You</a></li>
+                    <li><a href="{{ url_for('forum') }}">Forum</a></li>
+                </ul>
+            </nav>
+        </header>
+    </div>
+    <div class="border">
+        <div class="munchie">
+            <h1 class="top">
+                MUNCHEEZ Forum
+            </h1>
+            <a class="top" href="{{ url_for('add_post') }}">
+                <button id="post-button">Add Post</button>
+            </a>
+        </div>
+        <div class="main">
+            <ol>
+            </ol>
+        </div>
+        <script src="/static/scripts/data.js"></script>
+        <script>
+            var container = document.querySelector('ol');
+            for (let thread of threads_plus) {
+                var html = `
+                <li class="row">
+                        <h4 class="title">
+                            ${thread.title}
+                        </h4>
+                        <div class="info">
+                            <p class="address">
+                                Address: ${thread.address}
+                            </p>
+                            <p>
+                                ${thread.comments.length} comments
+                            </p>
+                        </div>
+                </li>
+                `
+                container.insertAdjacentHTML('beforeend', html);
+            }
+        </script>
+    </div>
+    <style>
+        .border {
+            background-color: black;
+            border: 2px solid #000000;
+            border-radius: 35px;
+            box-shadow: 0 0 50px rgba(0, 4, 250, 0.1);
+            color: white;
+        }
+
+        body {
+            margin: 110px 40px;
+            font-size: 20px;
+        }
+
+        h1,
+        h4,
+        ol {
+            color: white;
+        }
+
+        p {
+            margin-top: 5px;
+        }
+
+        .munchie {
+            padding: 0 30px;
+        }
+
+        .main {
+            padding: 15px 15px;
+            color: white;
+        }
+
+        .row {
+            padding: 5px 0;
+            position: relative;
+            left: 15px;
+        }
+
+        .info {
+            display: flex;
+            color: grey;
+            font-size: 12px;
+        }
+
+        .address {
+            padding-right: 10px;
+        }
+
+        .top {
+            display: inline-block;
+        }
+
+        #post-button {
+            background-color: white;
+            color: black;
+            border: 2px solid white;
+            padding: 10px 20px;
+            font-size: 18px;
+            border-radius: 5px;
+            margin-left: 20px;
+        }
+
+        #post-button:hover {
+            background-color: black;
+            color: white;
+        }
+    </style>
+</body>
+
+{% endblock %}

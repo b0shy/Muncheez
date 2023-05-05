@@ -28,6 +28,11 @@ def forum():
 def add_post():
     return render_template('add_post.html')
 
+#Renders Add Post page
+@app.route('/forum_plus')
+def add_post():
+    return render_template('forum_plus.html')
+
 # sends the user to the create user form
 
 #gets the sign up page 
