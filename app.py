@@ -4,7 +4,7 @@ from src.repositories.username_repository import users_repository_singleton
 
 
 app = Flask(__name__)
-app.secret_key = 'cool-guy'
+app.secret_key = 'cool-guy' 
 
 
 # TODO: DB connection

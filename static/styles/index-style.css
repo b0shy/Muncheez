@@ -200,8 +200,8 @@ footer {
 }
 
 .createAccountForm {
-    max-width: 400px; /* Set a maximum width for the form */
-    margin: 0 auto; /* Center the form horizontally */
-    display: flex; /* Use flexbox layout for the form */
-    flex-direction: column; /* Stack the form inputs vertically */
+    max-width: 400px; 
+    margin: 0 auto; 
+    display: flex; 
+    flex-direction: column; 
 }
