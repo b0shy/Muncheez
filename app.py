@@ -28,6 +28,11 @@ def forum():
 def add_post():
     return render_template('add_post.html')
 
+#Renders example post
+@app.route('/submit', methods=['GET'])
+def submit():
+    return render_template('example.html')
+
 # sends the user to the create user form
 
 #gets the sign up page 
