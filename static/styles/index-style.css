@@ -1,4 +1,4 @@
-* { 
+* {
     margin: 0;
     padding: 0;
 
@@ -10,8 +10,8 @@ header {
     top: 0;
     left: 0;
     right: 0;
-    height:80px;
-    background-color:#000000;
+    height: 80px;
+    background-color: #000000;
     align-items: center;
     display: flex;
     box-shadow: 0 0 10px 0 black;
@@ -33,13 +33,13 @@ header li a {
 }
 
 .logo {
-    width: 200px; 
-    height: auto; 
-    object-fit: cover; 
-    margin-left: 20px; 
+    width: 200px;
+    height: auto;
+    object-fit: cover;
+    margin-left: 20px;
 }
 
-nav{
+nav {
     margin-left: auto;
 }
 
@@ -63,7 +63,7 @@ main {
 main h1 {
     padding-left: 200px;
     text-align: left;
-    margin-bottom: 10px;   
+    margin-bottom: 10px;
 }
 
 main p {
@@ -74,7 +74,7 @@ main p {
 }
 
 .icon_image {
-    width: 25px; 
+    width: 25px;
 }
 
 .info_text {
@@ -146,7 +146,7 @@ footer {
     border: 2px solid #000000;
     border-radius: 50px;
     box-shadow: 0 0 50px rgba(0, 4, 250, 0.1);
-    text-align: center; 
+    text-align: center;
 }
 
 .form-container {
@@ -154,6 +154,25 @@ footer {
     flex-direction: column;
     align-items: center;
 }
+
+.loginButtons {
+    height: 40px;
+    width: 150px;
+    margin-top: 20px;
+    margin-right: 10px;
+    padding: 10px;
+    color: #000000;
+    font-weight: bold;
+    text-align: center;
+    text-decoration: none;
+    border-radius: 5px;
+}
+
+.noDecoration {
+    text-decoration: none;
+    color: #000000;
+}
+
 .form-field {
     margin-bottom: 10px;
     padding: 10px;
@@ -163,6 +182,7 @@ footer {
     box-sizing: border-box;
     background-color: #fff;
 }
+
 .form-submit {
     padding: 10px 20px;
     background-color: #ccc;
@@ -177,4 +197,11 @@ footer {
     height: 200px;
     object-fit: cover;
     margin-left: 20px;
+}
+
+.createAccountForm {
+    max-width: 400px; /* Set a maximum width for the form */
+    margin: 0 auto; /* Center the form horizontally */
+    display: flex; /* Use flexbox layout for the form */
+    flex-direction: column; /* Stack the form inputs vertically */
 }

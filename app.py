@@ -18,9 +18,15 @@ db.init_app(app)
 def index():
     return render_template('index.html')
 
+#Renders Forum page
 @app.route('/forum')
 def forum():
     return render_template('forum.html')
+
+#Renders Add Post page
+@app.route('/add_post')
+def add_post():
+    return render_template('add_post.html')
 
 # sends the user to the create user form
 
