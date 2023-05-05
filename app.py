@@ -9,7 +9,7 @@ app.secret_key = 'cool-guy'
 
 # TODO: DB connection
 app.config['SQLALCHEMY_DATABASE_URI'] = \
-    'mysql://root:password@localhost:3306/muncheez'
+    'mysql://root:1F901e4cd3!@localhost:3306/muncheez'
 app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
 db.init_app(app)
 
@@ -34,7 +34,7 @@ def create_new_user_form():
 @app.get('/users/<int:user_id>/home')
 def user_home(user_id):
     user = users_repository_singleton.get_user_by_id(user_id)
-    return render_template('userProfile.html', user=user)
+    return render_template('userProfile.html', user=user,user_logged_in=True)
 
 
 # creates user and stores it in database
@@ -44,17 +44,23 @@ def create_user():
     user_password = request.form.get('user_password', '')
     firstName = request.form.get('firstName', '')
     lastName = request.form.get('lastName', '')
+    user_address = request.form.get('user_address','')
+    user_city = request.form.get('user_city','')
+    user_state = request.form.get('user_state','')
+    zip_code = request.form.get('zip_code','')
     user_email = request.form.get('user_email', '')
     user_phone_number = request.form.get('user_phone_number', ' ')
+    
     if username == '' or firstName == '' or lastName == '' or user_email == '' or user_password == '' or user_phone_number == '':
         abort(400)
 
     user = users_repository_singleton.create_user(
-        username, user_password, firstName, lastName, user_email, user_phone_number)
+        username, user_password, firstName, lastName, user_address, user_city, user_state, zip_code, user_email, 
+        user_phone_number)
 
     session['user_id'] = user.user_id
 
-    return redirect(f'/nearYou')
+    return redirect(f'/users/{user.user_id}/home')
 
 #shows all the restaurants
 @app.get('/allRestaurant')
@@ -91,7 +97,7 @@ def login():
     user = users_repository_singleton.login(username, password)
 
     if user:
-        return redirect(f'/nearYou')
+        return redirect(f'/users/{user.user_id}/home')
     else:
         return render_template('index.html', error='Invalid Username or Password')
     

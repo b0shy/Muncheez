@@ -15,11 +15,11 @@ class usernameRepository:
     def get_user_by_id(self, user_id):
         return users.query.get(user_id)
 
-    def create_user(self, userName, user_password, firstName, lastName, user_email, user_phone_number):
+    def create_user(self, userName, user_password, firstName, lastName, user_address, user_city, user_state,zip_code ,user_email, user_phone_number):
         hashed_password = generate_password_hash(user_password)
         created_user = users(
             userName=userName, user_password=hashed_password,
-            firstName=firstName, lastName=lastName,
+            firstName=firstName, lastName=lastName, user_address = user_address, user_city=user_city, user_state=user_state,zip_code=zip_code,
             user_email=user_email, user_phone_number=user_phone_number
         )
 

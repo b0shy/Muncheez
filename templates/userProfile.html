@@ -1,0 +1,39 @@
+{% extends "_layout.html" %}
+
+{% block body %}
+<div class="user-home-container">
+  <h1>User data: {{ user }}</h1>
+  <h2>Welcome, {{ user.firstName }} {{ user.lastName }}</h2>
+
+  <!-- <h1>User data: {{ user }}</h1> -->
+  <!-- Add more content for the user's profile here -->
+</div>
+
+<p></p>
+
+<div>
+  <form class="user-home-container" style="padding:30px">
+    <label for="password">Change password</label>
+    <input type="password" id="user_password" name="user_password" required>
+
+    <label for="retype-password">Retype New Password</label>
+    <input type="text" id="retype-password" name="retype-password" required>
+
+    <label for="first-name">Change First Name</label>
+    <input type="text" id="first_name" name="firstName" required>
+
+    <label for="last-name">Change Last Name</label>
+    <input type="text" id="lastName" name="lastName" required>
+
+    <label for="email">Change Email</label>
+    <input type="text" id="user_email" name="user_email" required>
+
+    <label for="number">Change Phone number</label>
+    <input type="text" id="user_phone_number" name="user_phone_number" required>
+    
+    <div class="button-container">
+      <button type="submit" id="Create Account">Update Account</button>
+
+  </form>
+</div>
+{% endblock %}
