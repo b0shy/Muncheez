@@ -32,9 +32,9 @@
                 <input type="text" id="address" name="address"><br><br>
                 <label for="message">Message:</label>
                 <textarea id="message" name="message" rows="5" cols="50"></textarea><br><br>
-                <form action="/submit" method="GET">
-                    <button type="submit">Submit</button>
-                </form>
+                
+                <a href="{{ url_for('forum') }}"><button type="submit">Submit</button></a>
+                
             </form>
         </div>
     </div>
