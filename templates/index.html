@@ -11,16 +11,16 @@
 <div class="login-container">
     <h1>Login</h1>
     <form method="post" action="/login">
-        <label for="username">Username</label>
-        <input type="text" id="username" name="username" required>
+        <br><label for="username">Username</label>
+        <input type="text" id="username" name="username" required><br>
     
-        <label for="password">Password</label>
-        <input type="password" id="password" name="password" required>
+        <br><label for="password" class="loginPassword">Password</label>
+        <input type="password" id="password" name="password" class="loginPassword" required>
     
         <div class="button-container">
-        <button type="submit" id="login-button">Login</button>
-        <button type="submit" id="forgot-password-button">Forgot Password</button>
-        <a href="/users/new"> Create account</a>
+        <button type="submit" id="login-button" class="loginButtons">Login</button>
+        <button type="submit" id="forgot-password-button" class="loginButtons">Forgot Password</button>
+        <button type="submit" class="loginButtons"><a href="/users/new" class="noDecoration"> Create account</a></button>
 
 
         
@@ -30,7 +30,3 @@
 
 
 {% endblock %}
-
-
-
-
